@@ -1,6 +1,9 @@
 from pyexpat import model
+from socket import herror
 from xml.dom.minidom import CharacterData
 from django.db import models
+
+import heroandvillains
 
 # Create your models here.
 
@@ -10,7 +13,7 @@ class heroandvillains(models.Model):
     primary_ability = models.CharField()
     secondary_ability = models.CharField()
     catchphrase = CharacterData()
-    super_type = models.ForeignKey()
-    
+    super_type = models.ForeignKey(Super_type, on_delete=models.CASCADE)
+
 
 
